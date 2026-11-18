@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "purpose": "人工核验资料：飞猪接口不返回、但产品需要的信息，只能从这里补，且必须带来源与采集日期。没有 source 和 collected_at 的条目不得进入手册。",
+  "collected_by": "hans",
+  "entries": [
+    {
+      "id": "poi-杭州少年儿童公园",
+      "kind": "poi",
+      "name": "杭州少年儿童公园",
+      "opening_hours": null,
+      "free_status": "NOT_FREE",
+      "list_rank": "杭州主题乐园景点榜第7名",
+      "coordinates": { "latitude": "30.217123", "longitude": "120.132845" },
+      "source": "飞猪 FlyAI search-poi --city-name 杭州 --category 公园乐园",
+      "collected_at": "2026-11-18",
+      "verify_status": "待核",
+      "note": "坐标与榜单来自接口真实返回；开放时间接口未返回，需人工核实后再解除待核。"
+    },
+    {
+      "id": "poi-虎跑公园",
+      "kind": "poi",
+      "name": "虎跑公园",
+      "opening_hours": null,
+      "free_status": "NOT_FREE",
+      "list_rank": "浙江城市公园景点榜第1名",
+      "coordinates": { "latitude": "30.203600", "longitude": "120.124700" },
+      "source": "飞猪 FlyAI search-poi --city-name 杭州 --category 公园乐园",
+      "collected_at": "2026-11-18",
+      "verify_status": "待核",
+      "note": "免费状态为 NOT_FREE，说明需购票；票价接口未返回，不做金额推断。"
+    },
+    {
+      "id": "poi-中国丝绸博物馆",
+      "kind": "poi",
+      "name": "中国丝绸博物馆",
+      "opening_hours": null,
+      "free_status": "FREE",
+      "list_rank": null,
+      "coordinates": { "latitude": "30.228700", "longitude": "120.139900" },
+      "source": "飞猪 FlyAI search-poi --city-name 杭州 --category 博物馆",
+      "collected_at": "2026-11-18",
+      "verify_status": "待核",
+      "note": "免费状态为 FREE；博物馆类通常周一闭馆，但接口未返回，禁止据此排入周一。"
+    },
+    {
+      "id": "convention-入住退房时间",
+      "kind": "convention",
+      "name": "15:00 入住 / 12:00 退房",
+      "opening_hours": null,
+      "free_status": null,
+      "list_rank": null,
+      "coordinates": null,
+      "source": "行业惯例，非酒店确认值",
+      "collected_at": "2026-11-18",
+      "verify_status": "待核",
+      "note": "所有 45 小时计算都基于这两个时间点。若订单页给了不同的入住/退房时间，必须改参数重算，不得沿用惯例值。"
+    }
+  ]
+}

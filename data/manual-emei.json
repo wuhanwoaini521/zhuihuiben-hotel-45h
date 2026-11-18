@@ -1,0 +1,877 @@
+{
+  "hotel": {
+    "name": "杭州滨江世融艾美酒店",
+    "star": "豪华型",
+    "address": "江南大道4756号",
+    "decoration_time": "2018",
+    "latitude": "30.187956",
+    "longitude": "120.146016",
+    "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F10HQMv",
+    "price_text": "¥6xx"
+  },
+  "package": {
+    "title": "杭州滨江世融艾美酒店自助晚餐周三至周日可用",
+    "item_id": "1056387867575",
+    "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F278MPS",
+    "sell_point": "自助餐主题随时令更新，周三至周日通用 周末不加价，星厨团队 数百种美食不限量畅吃，每位成人可携带一位1.2M以下儿童",
+    "price_text": "￥218起",
+    "price_value": 218.0,
+    "price_is_from": true,
+    "price_unit": null,
+    "nights": null,
+    "breakfast_count": null,
+    "weekday_window": [
+      2,
+      6
+    ],
+    "surcharge_days": null,
+    "surcharge_amount": null,
+    "weekend_no_surcharge": true,
+    "valid_until": null,
+    "child_height_max_m": 1.2,
+    "no_points": false,
+    "entitlements": [
+      {
+        "name": "自助晚餐",
+        "keyword": "自助晚餐",
+        "evidence": "杭州滨江世融艾美酒店自助晚餐周三至周日可用"
+      },
+      {
+        "name": "自助餐",
+        "keyword": "自助餐",
+        "evidence": "自助餐主题随时令更新"
+      }
+    ],
+    "ambiguous": [],
+    "evidence": {
+      "weekday_window": "杭州滨江世融艾美酒店自助晚餐周三至周日可用",
+      "weekend_no_surcharge": "周三至周日通用 周末不加价",
+      "child_height_max_m": "每位成人可携带一位1.2M以下儿童"
+    },
+    "missing": [
+      "nights",
+      "breakfast_count",
+      "valid_until"
+    ]
+  },
+  "booking": {
+    "hotel_name": "杭州滨江世融艾美酒店",
+    "check_in": "2026-11-27",
+    "check_out": "2026-11-29",
+    "adults": 2,
+    "children": [
+      {
+        "height_cm": 125
+      }
+    ],
+    "nights": 2,
+    "stay_hours": 45.0,
+    "walk_threshold_m": 1200
+  },
+  "findings": [
+    {
+      "id": "validity",
+      "level": "UNKNOWN",
+      "title": "套餐有效期未标注",
+      "detail": "文案里没有「有效期至…」，无法确认入住日是否在售期内。",
+      "evidence": null,
+      "rule": "R1",
+      "level_label": "待核"
+    },
+    {
+      "id": "weekday_window",
+      "level": "OK",
+      "title": "入住日落在可用星期内",
+      "detail": "套餐可用周三至周日，本次全部命中。",
+      "evidence": "杭州滨江世融艾美酒店自助晚餐周三至周日可用",
+      "rule": "R2",
+      "level_label": "已核实"
+    },
+    {
+      "id": "surcharge",
+      "level": "OK",
+      "title": "未发现加价条款",
+      "detail": "文案中没有「周X至周Y需加价」的约定。",
+      "evidence": null,
+      "rule": "R3",
+      "level_label": "已核实"
+    },
+    {
+      "id": "weekend",
+      "level": "OK",
+      "title": "周末加价规则已核对",
+      "detail": "本次含周六/周日入住，套餐明确「周末不加价」，价格条件成立。",
+      "evidence": "周三至周日通用 周末不加价",
+      "rule": "R4",
+      "level_label": "已核实"
+    },
+    {
+      "id": "child",
+      "level": "WARN",
+      "title": "儿童超出身高限制",
+      "detail": "套餐限 1.2M（120cm）以下儿童，同行 125cm 需按成人/儿童价另计，补差金额接口未返回，标注待核。",
+      "evidence": "每位成人可携带一位1.2M以下儿童",
+      "rule": "R5",
+      "level_label": "有风险"
+    },
+    {
+      "id": "breakfast",
+      "level": "UNKNOWN",
+      "title": "未含早餐",
+      "detail": "套餐文案未出现早餐份数。",
+      "evidence": null,
+      "rule": "R6",
+      "level_label": "待核"
+    },
+    {
+      "id": "cost",
+      "level": "UNKNOWN",
+      "title": "起价不等于成交价",
+      "detail": "接口价格为「￥218起」，「起」表示最低档起价；指定日期、指定房型的成交价需在订单页确认，此处不做加总。",
+      "evidence": "￥218起",
+      "rule": "R7",
+      "level_label": "待核"
+    },
+    {
+      "id": "time_window",
+      "level": "OK",
+      "title": "无餐段权益与退房冲突",
+      "detail": "套餐不含午市权益，退房前无餐段安排。",
+      "evidence": null,
+      "rule": "R9",
+      "level_label": "已核实"
+    },
+    {
+      "id": "walk",
+      "level": "WARN",
+      "title": "周边步行不可达",
+      "detail": "步行半径 1200m 内 0 处；最近的是「虎跑公园」直线 2722m、约 47 分钟步行。45 小时实际会被限制在酒店内，应切换到「纯宅」方案。",
+      "evidence": "坐标来自 search-poi 返回的 latitude/longitude",
+      "rule": "R8",
+      "level_label": "有风险"
+    }
+  ],
+  "summary": {
+    "BLOCK": 0,
+    "WARN": 2,
+    "UNKNOWN": 3,
+    "OK": 4
+  },
+  "scan": {
+    "threshold_m": 1200,
+    "rows": [
+      {
+        "name": "虎跑公园",
+        "category": "公园乐园",
+        "list_rank": "浙江城市公园景点榜第1名",
+        "free_status": "NOT_FREE",
+        "poi_level": null,
+        "meters": 2722,
+        "walk_minutes": 47,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F2966tH"
+      },
+      {
+        "name": "杭州少年儿童公园",
+        "category": "公园乐园",
+        "list_rank": "杭州主题乐园景点榜第7名",
+        "free_status": "NOT_FREE",
+        "poi_level": null,
+        "meters": 3376,
+        "walk_minutes": 59,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F0N7Bm4"
+      },
+      {
+        "name": "中国丝绸博物馆",
+        "category": "博物馆",
+        "list_rank": null,
+        "free_status": "FREE",
+        "poi_level": "4",
+        "meters": 3915,
+        "walk_minutes": 68,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F1vyybw"
+      },
+      {
+        "name": "西湖风景区-太子湾公园",
+        "category": "公园乐园",
+        "list_rank": "浙江城市公园景点榜第2名",
+        "free_status": "FREE",
+        "poi_level": null,
+        "meters": 4188,
+        "walk_minutes": 73,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F3uzzkv"
+      },
+      {
+        "name": "馒头山社区居委会",
+        "category": "文创街区",
+        "list_rank": null,
+        "free_status": "FREE",
+        "poi_level": null,
+        "meters": 4241,
+        "walk_minutes": 74,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F3EMzrN"
+      },
+      {
+        "name": "海茵汇·汤泉·自助餐(滨江店)",
+        "category": "温泉",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 4640,
+        "walk_minutes": 80,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F1GvBQZ"
+      },
+      {
+        "name": "杭州西湖风景名胜区-花港观鱼",
+        "category": "公园乐园",
+        "list_rank": null,
+        "free_status": "FREE",
+        "poi_level": null,
+        "meters": 4748,
+        "walk_minutes": 82,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F1KfzVP"
+      },
+      {
+        "name": "西湖外事游船",
+        "category": "城市观光",
+        "list_rank": null,
+        "free_status": "NOT_FREE",
+        "poi_level": null,
+        "meters": 4972,
+        "walk_minutes": 86,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F46zFjj"
+      },
+      {
+        "name": "杭州西湖风景名胜区-杨公堤",
+        "category": "城市观光",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 5031,
+        "walk_minutes": 87,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F2SfSn2"
+      },
+      {
+        "name": "浙江省博物馆(之江馆)",
+        "category": "博物馆",
+        "list_rank": "浙江博物馆景点榜第2名",
+        "free_status": "FREE",
+        "poi_level": null,
+        "meters": 5292,
+        "walk_minutes": 92,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F3GLHN0"
+      },
+      {
+        "name": "南山路",
+        "category": "文创街区",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 5370,
+        "walk_minutes": 93,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F0zG71O"
+      },
+      {
+        "name": "中国茶叶博物馆(双峰馆区)",
+        "category": "博物馆",
+        "list_rank": null,
+        "free_status": "FREE",
+        "poi_level": null,
+        "meters": 5514,
+        "walk_minutes": 96,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F48EPQZ"
+      },
+      {
+        "name": "西湖游船",
+        "category": "城市观光",
+        "list_rank": null,
+        "free_status": "NOT_FREE",
+        "poi_level": null,
+        "meters": 5694,
+        "walk_minutes": 99,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F2hfz9j"
+      },
+      {
+        "name": "钱塘江夜游",
+        "category": "城市观光",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 5894,
+        "walk_minutes": 102,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F02gop1"
+      },
+      {
+        "name": "杭州博物馆",
+        "category": "博物馆",
+        "list_rank": "浙江博物馆景点榜第5名",
+        "free_status": "FREE",
+        "poi_level": null,
+        "meters": 6018,
+        "walk_minutes": 104,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F3zybZj"
+      },
+      {
+        "name": "西湖博物馆",
+        "category": "博物馆",
+        "list_rank": null,
+        "free_status": "FREE",
+        "poi_level": null,
+        "meters": 6080,
+        "walk_minutes": 105,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F2uYHS0"
+      },
+      {
+        "name": "朱炳仁铜雕艺术博物馆",
+        "category": "博物馆",
+        "list_rank": null,
+        "free_status": "FREE",
+        "poi_level": null,
+        "meters": 6125,
+        "walk_minutes": 106,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F3NTlDi"
+      },
+      {
+        "name": "清河坊街",
+        "category": "文创街区",
+        "list_rank": "杭州城市景观景点榜第3名",
+        "free_status": "FREE",
+        "poi_level": "4",
+        "meters": 6208,
+        "walk_minutes": 108,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F1784HX"
+      },
+      {
+        "name": "南宋御街",
+        "category": "文创街区",
+        "list_rank": "杭州城市景观景点榜第9名",
+        "free_status": "FREE",
+        "poi_level": null,
+        "meters": 6644,
+        "walk_minutes": 115,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F1PUnf9"
+      },
+      {
+        "name": "西湖天地",
+        "category": "文创街区",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 6692,
+        "walk_minutes": 116,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F1kWmBE"
+      },
+      {
+        "name": "西泠印社",
+        "category": "博物馆",
+        "list_rank": null,
+        "free_status": "FREE",
+        "poi_level": null,
+        "meters": 6954,
+        "walk_minutes": 121,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F0FgiVi"
+      },
+      {
+        "name": "浙江省博物馆（孤山馆区）",
+        "category": "博物馆",
+        "list_rank": "杭州展览展馆景点榜第8名",
+        "free_status": "FREE",
+        "poi_level": null,
+        "meters": 7040,
+        "walk_minutes": 122,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F1wV2rg"
+      },
+      {
+        "name": "中山公园",
+        "category": "公园乐园",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 7091,
+        "walk_minutes": 123,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F0pV6hy"
+      },
+      {
+        "name": "吴山夜市",
+        "category": "市集",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 7531,
+        "walk_minutes": 131,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F2sZ5nA"
+      },
+      {
+        "name": "武林夜市",
+        "category": "市集",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 8299,
+        "walk_minutes": 144,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F0rsUGx"
+      },
+      {
+        "name": "钱塘江游轮",
+        "category": "城市观光",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 8838,
+        "walk_minutes": 153,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F0Hk6pM"
+      },
+      {
+        "name": "Do都城",
+        "category": "公园乐园",
+        "list_rank": "杭州主题乐园景点榜第6名",
+        "free_status": "NOT_FREE",
+        "poi_level": null,
+        "meters": 9040,
+        "walk_minutes": 157,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F14h3Gu"
+      },
+      {
+        "name": "杭州烂苹果乐园",
+        "category": "公园乐园",
+        "list_rank": "杭州主题乐园景点榜第4名",
+        "free_status": "NOT_FREE",
+        "poi_level": null,
+        "meters": 9598,
+        "walk_minutes": 166,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F1lYUSm"
+      },
+      {
+        "name": "森泊幻想岛",
+        "category": "公园乐园",
+        "list_rank": null,
+        "free_status": "NOT_FREE",
+        "poi_level": null,
+        "meters": 9721,
+        "walk_minutes": 168,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F3gomI8"
+      },
+      {
+        "name": "杭州运河游船",
+        "category": "城市观光",
+        "list_rank": null,
+        "free_status": "NOT_FREE",
+        "poi_level": null,
+        "meters": 9758,
+        "walk_minutes": 169,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F26WH13"
+      },
+      {
+        "name": "杭州云曼温泉",
+        "category": "温泉",
+        "list_rank": null,
+        "free_status": "NOT_FREE",
+        "poi_level": null,
+        "meters": 9824,
+        "walk_minutes": 170,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F2gVuzL"
+      },
+      {
+        "name": "第一世界休闲酒店(温泉)",
+        "category": "温泉",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 9941,
+        "walk_minutes": 172,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F4G0rX4"
+      },
+      {
+        "name": "小河直街",
+        "category": "文创街区",
+        "list_rank": "杭州城市景观景点榜第5名",
+        "free_status": "FREE",
+        "poi_level": null,
+        "meters": 13421,
+        "walk_minutes": 233,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F07H2pa"
+      },
+      {
+        "name": "桥西直街",
+        "category": "文创街区",
+        "list_rank": null,
+        "free_status": "FREE",
+        "poi_level": null,
+        "meters": 14236,
+        "walk_minutes": 247,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F1wJBtF"
+      },
+      {
+        "name": "桥西历史街区",
+        "category": "文创街区",
+        "list_rank": null,
+        "free_status": "NOT_FREE",
+        "poi_level": null,
+        "meters": 14347,
+        "walk_minutes": 249,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F3X24A5"
+      },
+      {
+        "name": "杭州京杭大运河博物馆",
+        "category": "博物馆",
+        "list_rank": null,
+        "free_status": "NOT_FREE",
+        "poi_level": null,
+        "meters": 14401,
+        "walk_minutes": 250,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F31ODbm"
+      },
+      {
+        "name": "川沙温泉",
+        "category": "温泉",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 15543,
+        "walk_minutes": 269,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F0lhnUh"
+      },
+      {
+        "name": "梦想小镇",
+        "category": "文创街区",
+        "list_rank": null,
+        "free_status": "FREE",
+        "poi_level": "4",
+        "meters": 17867,
+        "walk_minutes": 310,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F0LnCrm"
+      },
+      {
+        "name": "漫水澜庭·足道汤泉",
+        "category": "温泉",
+        "list_rank": null,
+        "free_status": "NOT_FREE",
+        "poi_level": null,
+        "meters": 20484,
+        "walk_minutes": 355,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F2xVZwU"
+      },
+      {
+        "name": "良渚文化村",
+        "category": "文创街区",
+        "list_rank": "杭州城市景观景点榜第4名",
+        "free_status": "FREE",
+        "poi_level": null,
+        "meters": 23077,
+        "walk_minutes": 400,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F2j62WR"
+      },
+      {
+        "name": "良渚博物院",
+        "category": "博物馆",
+        "list_rank": "杭州展览展馆景点榜第3名",
+        "free_status": "FREE",
+        "poi_level": "4",
+        "meters": 23923,
+        "walk_minutes": 415,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F0dvWT7"
+      },
+      {
+        "name": "玖沐汤泉",
+        "category": "温泉",
+        "list_rank": null,
+        "free_status": "NOT_FREE",
+        "poi_level": null,
+        "meters": 34193,
+        "walk_minutes": 593,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F0hDHLg"
+      },
+      {
+        "name": "云之谷温泉庄园",
+        "category": "温泉",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 45447,
+        "walk_minutes": 788,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F2q1Crk"
+      },
+      {
+        "name": "风之谷景区",
+        "category": "公园乐园",
+        "list_rank": "临安赏花景点榜第3名",
+        "free_status": "NOT_FREE",
+        "poi_level": null,
+        "meters": 87249,
+        "walk_minutes": 1512,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F2onXvh"
+      },
+      {
+        "name": "天子地山野乐园",
+        "category": "公园乐园",
+        "list_rank": null,
+        "free_status": "NOT_FREE",
+        "poi_level": "4",
+        "meters": 88545,
+        "walk_minutes": 1535,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F3tlJXw"
+      },
+      {
+        "name": "七里扬帆",
+        "category": "城市观光",
+        "list_rank": "全国城市观光景点榜第3名",
+        "free_status": "NOT_FREE",
+        "poi_level": "4",
+        "meters": 91949,
+        "walk_minutes": 1594,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F0p8xpx"
+      },
+      {
+        "name": "湍口众安氡温泉",
+        "category": "温泉",
+        "list_rank": "浙江温泉景点榜第2名",
+        "free_status": "NOT_FREE",
+        "poi_level": "3",
+        "meters": 95803,
+        "walk_minutes": 1661,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F2m24Dd"
+      },
+      {
+        "name": "芦荻古温泉",
+        "category": "温泉",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 96022,
+        "walk_minutes": 1664,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F4EX11J"
+      },
+      {
+        "name": "千岛湖伯爵号游轮",
+        "category": "城市观光",
+        "list_rank": null,
+        "free_status": "NOT_FREE",
+        "poi_level": null,
+        "meters": 125277,
+        "walk_minutes": 2171,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F1NB1KI"
+      },
+      {
+        "name": "千岛湖游船",
+        "category": "城市观光",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 125522,
+        "walk_minutes": 2176,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F2oMZFs"
+      },
+      {
+        "name": "千岛湖夜游",
+        "category": "城市观光",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 125524,
+        "walk_minutes": 2176,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F0QiS8R"
+      },
+      {
+        "name": "航空小镇温泉(建设中)",
+        "category": "温泉",
+        "list_rank": null,
+        "free_status": "UNKNOWN",
+        "poi_level": null,
+        "meters": 127905,
+        "walk_minutes": 2217,
+        "walkable": false,
+        "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F25hJJY"
+      }
+    ],
+    "walkable": [],
+    "nearest": {
+      "name": "虎跑公园",
+      "category": "公园乐园",
+      "list_rank": "浙江城市公园景点榜第1名",
+      "free_status": "NOT_FREE",
+      "poi_level": null,
+      "meters": 2722,
+      "walk_minutes": 47,
+      "walkable": false,
+      "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F2966tH"
+    }
+  },
+  "timeline": {
+    "window_start": "2026-11-27T15:00",
+    "window_end": "2026-11-29T12:00",
+    "slots": [
+      {
+        "start": "2026-11-27T15:00",
+        "end": "2026-11-27T15:40",
+        "start_label": "11-27 15:00",
+        "end_label": "15:40",
+        "hours": 0.67,
+        "title": "抵达与入住",
+        "kind": "core",
+        "evidence_level": "已核实",
+        "note": "入住按行业惯例 15:00，订单页可改",
+        "source": "用户条件"
+      },
+      {
+        "start": "2026-11-27T15:40",
+        "end": "2026-11-27T18:30",
+        "start_label": "11-27 15:40",
+        "end_label": "18:30",
+        "hours": 2.83,
+        "title": "留白 / 自由活动",
+        "kind": "idle",
+        "evidence_level": "留白",
+        "note": "没有可核验的安排，留给你自己决定",
+        "source": ""
+      },
+      {
+        "start": "2026-11-27T18:30",
+        "end": "2026-11-27T20:30",
+        "start_label": "11-27 18:30",
+        "end_label": "20:30",
+        "hours": 2.0,
+        "title": "自助晚餐（套餐权益）",
+        "kind": "entitlement",
+        "evidence_level": "已核实",
+        "note": "开餐时段接口未返回，按 18:30–20:30 建议值排布",
+        "source": "杭州滨江世融艾美酒店自助晚餐周三至周日可用"
+      },
+      {
+        "start": "2026-11-27T20:30",
+        "end": "2026-11-27T23:00",
+        "start_label": "11-27 20:30",
+        "end_label": "23:00",
+        "hours": 2.5,
+        "title": "留白 / 自由活动",
+        "kind": "idle",
+        "evidence_level": "留白",
+        "note": "没有可核验的安排，留给你自己决定",
+        "source": ""
+      },
+      {
+        "start": "2026-11-27T23:00",
+        "end": "2026-11-28T07:00",
+        "start_label": "11-27 23:00",
+        "end_label": "07:00",
+        "hours": 8.0,
+        "title": "睡眠",
+        "kind": "sleep",
+        "evidence_level": "已核实",
+        "note": "按每晚 8 小时计",
+        "source": "生理常量"
+      },
+      {
+        "start": "2026-11-28T07:00",
+        "end": "2026-11-28T23:00",
+        "start_label": "11-28 07:00",
+        "end_label": "23:00",
+        "hours": 16.0,
+        "title": "留白 / 自由活动",
+        "kind": "idle",
+        "evidence_level": "留白",
+        "note": "没有可核验的安排，留给你自己决定",
+        "source": ""
+      },
+      {
+        "start": "2026-11-28T23:00",
+        "end": "2026-11-29T07:00",
+        "start_label": "11-28 23:00",
+        "end_label": "07:00",
+        "hours": 8.0,
+        "title": "睡眠",
+        "kind": "sleep",
+        "evidence_level": "已核实",
+        "note": "按每晚 8 小时计",
+        "source": "生理常量"
+      },
+      {
+        "start": "2026-11-29T07:00",
+        "end": "2026-11-29T11:30",
+        "start_label": "11-29 07:00",
+        "end_label": "11:30",
+        "hours": 4.5,
+        "title": "留白 / 自由活动",
+        "kind": "idle",
+        "evidence_level": "留白",
+        "note": "没有可核验的安排，留给你自己决定",
+        "source": ""
+      },
+      {
+        "start": "2026-11-29T11:30",
+        "end": "2026-11-29T12:00",
+        "start_label": "11-29 11:30",
+        "end_label": "12:00",
+        "hours": 0.5,
+        "title": "退房",
+        "kind": "core",
+        "evidence_level": "已核实",
+        "note": "退房按行业惯例 12:00",
+        "source": "用户条件"
+      }
+    ],
+    "rejected": [],
+    "metrics": {
+      "total_hours": 45.0,
+      "sleep_hours": 16.0,
+      "awake_hours": 29.0,
+      "scheduled_hours": 3.17,
+      "verified_hours": 3.17,
+      "pending_hours": 0,
+      "idle_hours": 25.83,
+      "awake_idle_hours": 25.8
+    },
+    "unused_entitlements": [
+      "自助餐"
+    ]
+  }
+}
