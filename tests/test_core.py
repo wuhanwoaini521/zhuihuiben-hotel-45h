@@ -216,5 +216,35 @@ class TestTimeline(unittest.TestCase):
                             f"{name} 既没排上也没被报告为未使用")
 
 
+class TestModelVsRule(unittest.TestCase):
+    """模型的输出必须被规则层复核，越界的一律不采用。"""
+
+    def test_compare_marks_agreement(self):
+        from src.agent_parse import compare
+        rule = {"nights": 2, "breakfast_count": 2, "surcharge_days": (1, 3),
+                "surcharge_amount": 200.0, "valid_until": "2027-03-31",
+                "child_height_max_m": None, "no_points": True}
+        model = {"nights": 2, "breakfast_count": 2, "surcharge_days": [1, 3],
+                 "surcharge_amount": 200, "valid_until": "2027-03-31",
+                 "child_height_max_m": None, "no_points": True}
+        verdicts = {d["field"]: d["verdict"] for d in compare(model, rule)}
+        self.assertTrue(all(v == "一致" for v in verdicts.values()), verdicts)
+
+    def test_compare_flags_hallucination(self):
+        from src.agent_parse import compare
+        rule = {"nights": 2, "valid_until": None}
+        model = {"nights": 3, "valid_until": "2027-01-01"}
+        verdicts = {d["field"]: d["verdict"] for d in compare(model, rule)}
+        self.assertEqual(verdicts["nights"], "数值不一致")
+        self.assertEqual(verdicts["valid_until"], "模型越界")
+
+    def test_compare_accepts_conservative_model(self):
+        from src.agent_parse import compare
+        rule = {"child_height_max_m": 1.2}
+        verdicts = {d["field"]: d["verdict"]
+                    for d in compare({"child_height_max_m": None}, rule)}
+        self.assertEqual(verdicts["child_height_max_m"], "模型更保守")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,101 @@
+{
+  "model_raw": "{\n  \"nights\": null,\n  \"breakfast_count\": null,\n  \"surcharge_days\": null,\n  \"surcharge_amount\": null,\n  \"valid_until\": null,\n  \"child_height_max_m\": 1.2,\n  \"no_points\": null\n}",
+  "model": {
+    "nights": null,
+    "breakfast_count": null,
+    "surcharge_days": null,
+    "surcharge_amount": null,
+    "valid_until": null,
+    "child_height_max_m": 1.2,
+    "no_points": null
+  },
+  "rule": {
+    "title": "杭州滨江世融艾美酒店自助晚餐周三至周日可用",
+    "item_id": "1056387867575",
+    "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F278MPS",
+    "sell_point": "自助餐主题随时令更新，周三至周日通用 周末不加价，星厨团队 数百种美食不限量畅吃，每位成人可携带一位1.2M以下儿童",
+    "price_text": "￥218起",
+    "price_value": 218.0,
+    "price_is_from": true,
+    "price_unit": null,
+    "nights": null,
+    "breakfast_count": null,
+    "weekday_window": [
+      2,
+      6
+    ],
+    "surcharge_days": null,
+    "surcharge_amount": null,
+    "weekend_no_surcharge": true,
+    "valid_until": null,
+    "child_height_max_m": 1.2,
+    "no_points": false,
+    "entitlements": [
+      {
+        "name": "自助晚餐",
+        "keyword": "自助晚餐",
+        "evidence": "杭州滨江世融艾美酒店自助晚餐周三至周日可用"
+      },
+      {
+        "name": "自助餐",
+        "keyword": "自助餐",
+        "evidence": "自助餐主题随时令更新"
+      }
+    ],
+    "ambiguous": [],
+    "evidence": {
+      "weekday_window": "杭州滨江世融艾美酒店自助晚餐周三至周日可用",
+      "weekend_no_surcharge": "周三至周日通用 周末不加价",
+      "child_height_max_m": "每位成人可携带一位1.2M以下儿童"
+    },
+    "missing": [
+      "nights",
+      "breakfast_count",
+      "valid_until"
+    ]
+  },
+  "diffs": [
+    {
+      "field": "nights",
+      "model": null,
+      "rule": null,
+      "verdict": "一致"
+    },
+    {
+      "field": "breakfast_count",
+      "model": null,
+      "rule": null,
+      "verdict": "一致"
+    },
+    {
+      "field": "surcharge_days",
+      "model": null,
+      "rule": null,
+      "verdict": "一致"
+    },
+    {
+      "field": "surcharge_amount",
+      "model": null,
+      "rule": null,
+      "verdict": "一致"
+    },
+    {
+      "field": "valid_until",
+      "model": null,
+      "rule": null,
+      "verdict": "一致"
+    },
+    {
+      "field": "child_height_max_m",
+      "model": 1.2,
+      "rule": 1.2,
+      "verdict": "一致"
+    },
+    {
+      "field": "no_points",
+      "model": null,
+      "rule": false,
+      "verdict": "模型更保守"
+    }
+  ]
+}

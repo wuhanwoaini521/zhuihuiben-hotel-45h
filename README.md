@@ -84,6 +84,26 @@ data/manual-notes.json   人工核验资料（带来源 + 日期 + 待核标记�
 docs/data-boundary.md    字段级「能拿到 / 拿不到」
 ```
 
+## 模型在链路里的位置（双解析复核）
+
+模型只做"提议"，规则层做"投票"，两者结果逐字段比对：
+
+```bash
+# 本地 Ollama 离线验证（不需要任何 Key）
+python -m src.agent_parse --package-keyword "2晚"
+
+# 切到阿里云百炼（同一份 prompt、同一份代码）
+DASHSCOPE_API_KEY=sk-xxx python -m src.agent_parse --provider bailian --package-keyword "2晚"
+```
+
+实测（本地 qwen3.5:4b，2026-11-18）：
+
+- 2 晚套餐（含加价日、有效期、积分房晚）：**7/7 字段一致，0 项越界**
+- 自助晚餐套餐（含儿童身高）：**6/7 一致，1 项"模型更保守"，0 项越界**
+
+差异分三类：`一致` / `模型更保守`（模型给 null，无害）/ `模型越界`（模型凭空给值 → **判红，不采用**）。
+手册里出现的每个数字都来自规则层，模型改写不了。
+
 ## 数据边界（写在最前面，因为它是设计前提）
 
 飞猪 FlyAI 接口**不返回**：

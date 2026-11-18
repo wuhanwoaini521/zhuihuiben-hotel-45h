@@ -1,0 +1,114 @@
+{
+  "model_raw": "{\n  \"nights\": 2,\n  \"breakfast_count\": 2,\n  \"surcharge_days\": [1, 3],\n  \"surcharge_amount\": 200,\n  \"valid_until\": \"2027-03-31\",\n  \"child_height_max_m\": null,\n  \"no_points\": true\n}",
+  "model": {
+    "nights": 2,
+    "breakfast_count": 2,
+    "surcharge_days": [
+      1,
+      3
+    ],
+    "surcharge_amount": 200,
+    "valid_until": "2027-03-31",
+    "child_height_max_m": null,
+    "no_points": true
+  },
+  "rule": {
+    "title": "杭州滨江AC欧轩2晚连住含早+单人午市西餐1份+不含积分房晚",
+    "item_id": "1098096633038",
+    "detail_url": "https://router.feizhu.com/multi/webview?url=https%3A%2F%2Frouter.feizhu.com%2Fws%2F3qJZWA",
+    "sell_point": "【核心地段】杭州滨江AC酒店，坐落滨江商务区，轻松满足商务出行，【设计美学】欧洲简约美学融合钱塘江潮起意境，配全景落地窗，【超值套餐】标准房2晚连住含2早+单人午市套餐+不含积分房晚，【预订须知】有效期至2027年3月31日，周二至周四需加价200元",
+    "price_text": "￥998起/2晚",
+    "price_value": 998.0,
+    "price_is_from": true,
+    "price_unit": "2晚",
+    "nights": 2,
+    "breakfast_count": 2,
+    "weekday_window": null,
+    "surcharge_days": [
+      1,
+      3
+    ],
+    "surcharge_amount": 200.0,
+    "weekend_no_surcharge": null,
+    "valid_until": "2027-03-31",
+    "child_height_max_m": null,
+    "no_points": true,
+    "entitlements": [
+      {
+        "name": "午市套餐",
+        "keyword": "午市",
+        "evidence": "杭州滨江AC欧轩2晚连住含早+单人午市西餐1份+不含积分房晚"
+      },
+      {
+        "name": "早餐",
+        "keyword": "含早",
+        "evidence": "标准房2晚连住含2早+单人午市套餐+不含积分房晚"
+      }
+    ],
+    "ambiguous": [
+      {
+        "field": "breakfast_count",
+        "why": "套餐为 2 晚，「含2早」未说明是总量还是每晚份数",
+        "evidence": "标准房2晚连住含2早+单人午市套餐+不含积分房晚"
+      }
+    ],
+    "evidence": {
+      "nights": "杭州滨江AC欧轩2晚连住含早+单人午市西餐1份+不含积分房晚",
+      "breakfast_count": "标准房2晚连住含2早+单人午市套餐+不含积分房晚",
+      "surcharge": "周二至周四需加价200元",
+      "valid_until": "有效期至2027年3月31日",
+      "no_points": "杭州滨江AC欧轩2晚连住含早+单人午市西餐1份+不含积分房晚"
+    },
+    "missing": []
+  },
+  "diffs": [
+    {
+      "field": "nights",
+      "model": 2,
+      "rule": 2,
+      "verdict": "一致"
+    },
+    {
+      "field": "breakfast_count",
+      "model": 2,
+      "rule": 2,
+      "verdict": "一致"
+    },
+    {
+      "field": "surcharge_days",
+      "model": [
+        1,
+        3
+      ],
+      "rule": [
+        1,
+        3
+      ],
+      "verdict": "一致"
+    },
+    {
+      "field": "surcharge_amount",
+      "model": 200,
+      "rule": 200.0,
+      "verdict": "一致"
+    },
+    {
+      "field": "valid_until",
+      "model": "2027-03-31",
+      "rule": "2027-03-31",
+      "verdict": "一致"
+    },
+    {
+      "field": "child_height_max_m",
+      "model": null,
+      "rule": null,
+      "verdict": "一致"
+    },
+    {
+      "field": "no_points",
+      "model": true,
+      "rule": true,
+      "verdict": "一致"
+    }
+  ]
+}
